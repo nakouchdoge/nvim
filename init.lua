@@ -3,7 +3,7 @@ vim.cmd("set cursorline")
 vim.cmd("set guicursor=a:blinkon100")
 vim.cmd("set tabstop=4")
 vim.cmd("set shiftwidth=4")
-
+vim.cmd("set scrolloff=10")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -20,4 +20,4 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
-vim.cmd[[colorscheme tokyodark]]
+vim.cmd[[colorscheme everforest]]

@@ -10,12 +10,12 @@ return {
 		opts = {},
 	},
 	{
-		"catppuccin/nvim",
-		name = "catppuccin", 
-		priority = 1000 
-	},
-	{
 		"navarasu/onedark.nvim",
 		name = "onedark",
+	},
+	{
+		"neanias/everforest-nvim",
+		version = false,
+		lazy = false,
 	},
 }
