@@ -1,27 +1,17 @@
 return {
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-	},
-	{
-		"tiagovla/tokyodark.nvim",
-		opts = {},
-	},
-	{
-		"navarasu/onedark.nvim",
-		name = "onedark",
-	},
+	{ "folke/tokyonight.nvim" },
+	{ "tiagovla/tokyodark.nvim" },
+	{ "navarasu/onedark.nvim", name = "onedark" },
 	{
 		"neanias/everforest-nvim",
 		version = false,
 		lazy = false,
 		background = "hard",
 	},
-	{
-		"rebelot/kanagawa.nvim"
-	},
+	{ "rebelot/kanagawa.nvim" },
+	{ "rose-pine/neovim", name = "rose-pine" },
+	{ "Mofiqul/dracula.nvim" },
+	{ "EdenEast/nightfox.nvim" },
 	{
 	  "dundalek/lazy-lsp.nvim",
 	  dependencies = { "neovim/nvim-lspconfig" },
