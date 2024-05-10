@@ -19,6 +19,15 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
-vim.cmd[[colorscheme everforest]]
+--vim.cmd[[colorscheme everforest]]
 
 require("lazy-lsp").setup("lsp-zero")
+require("everforest").setup {
+	background = "hard"
+}
+
+require("onedark").setup {
+	style = "darker"
+}
+
+require("kanagawa").load() 

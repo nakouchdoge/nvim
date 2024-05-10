@@ -17,6 +17,10 @@ return {
 		"neanias/everforest-nvim",
 		version = false,
 		lazy = false,
+		background = "hard",
+	},
+	{
+		"rebelot/kanagawa.nvim"
 	},
 	{
 	  "dundalek/lazy-lsp.nvim",
