@@ -30,4 +30,7 @@ require("onedark").setup {
 	style = "darker"
 }
 
-require("kanagawa").load() 
+require("tokyonight").setup {
+	style = "moon",
+}
+require("tokyonight").load()
