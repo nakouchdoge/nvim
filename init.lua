@@ -26,7 +26,7 @@ require("everforest").setup {
 }
 
 require("onedark").setup {
-	style = "darker"
+	style = "deep"
 }
 
 require("tokyonight").setup {
