@@ -21,8 +21,9 @@ require("lazy").setup("plugins")
 --vim.cmd[[colorscheme everforest]]
 
 require("lazy-lsp").setup("lsp-zero")
+
 require("everforest").setup {
-	background = "hard"
+	style = "hard"
 }
 
 require("onedark").setup {
