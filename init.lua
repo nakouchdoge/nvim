@@ -17,7 +17,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-
 require("lazy").setup("plugins")
 --vim.cmd[[colorscheme everforest]]
 
@@ -31,9 +30,14 @@ require("onedark").setup {
 }
 
 require("tokyonight").setup {
-	style = "moon",
+	style = "night",
 }
 require("tokyonight").load()
+
+require("rose-pine").setup({
+	variant = "moon",
+	dark_variant = "moon",
+})
 
 
 --Custom Shit for LSP and cmp
