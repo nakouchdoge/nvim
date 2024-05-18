@@ -77,6 +77,12 @@ local default_setup = function(server)
   })
 end
 
+require('lspconfig').intelephense.setup {
+	cmd = {'intelephense', '--stdio'},
+	filetypes = {'php'},
+	root_pattern = { 'composer.json', '.git' }
+}
+
 require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {},
