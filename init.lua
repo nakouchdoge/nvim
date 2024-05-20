@@ -40,6 +40,7 @@ require("rose-pine").setup({
 	dark_variant = "moon",
 })
 
+require("luasnip.loaders.from_vscode").lazy_load()
 
 --Custom Shit for LSP and cmp
 -- note: diagnostics are not exclusive to lsp servers
@@ -77,11 +78,11 @@ local default_setup = function(server)
   })
 end
 
-require('lspconfig').intelephense.setup {
-	cmd = {'intelephense', '--stdio'},
-	filetypes = {'php'},
-	root_pattern = { 'composer.json', '.git' }
-}
+--require('lspconfig').intelephense.setup {
+--	cmd = {'intelephense', '--stdio'},
+--	filetypes = {'php'},
+--	root_pattern = { 'composer.json', '.git' }
+--}
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
