@@ -1,11 +1,4 @@
-vim=vim
-vim.cmd("set number relativenumber")
-vim.cmd("set cursorline")
-vim.cmd("set guicursor=a:blinkon100")
-vim.cmd("set tabstop=4")
-vim.cmd("set shiftwidth=4")
-vim.cmd("set scrolloff=10")
-
+require("vimscript")
 require("remap")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -19,60 +12,12 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     lazypath,
   })
 end
-
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
---vim.cmd[[colorscheme everforest]]
+require("plugins.themes")
 
-require("lazy-lsp").setup("lsp-zero")
-
-require("everforest").setup {
-	style = "hard"
-}
-
-require("onedark").setup {
-	style = "deep"
-}
-
-require("tokyonight").setup {
-	style = "night",
-}
-require("tokyonight").load()
-
-require("rose-pine").setup({
-	variant = "moon",
-	dark_variant = "moon",
-})
-
+--require("lazy-lsp").setup("lsp-zero")
 require("luasnip.loaders.from_vscode").lazy_load()
-
---Custom Shit for LSP and cmp
--- note: diagnostics are not exclusive to lsp servers
--- so these can be global keybindings
-vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
-vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
-vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
-
-vim.api.nvim_create_autocmd('LspAttach', {
-  desc = 'LSP actions',
-  callback = function(event)
-    local opts = {buffer = event.buf}
-
-    -- these will be buffer-local keybindings
-    -- because they only work if you have an active language server
-
-    vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-    vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
-    vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-    vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
-    vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-    vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-    vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-    vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-    vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-    vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-  end
-})
 
 local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
