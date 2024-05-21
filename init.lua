@@ -1,5 +1,6 @@
 require("vimscript")
 require("remap")
+require("plugins.lsp")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -26,37 +27,3 @@ local default_setup = function(server)
     capabilities = lsp_capabilities,
   })
 end
-
---require('lspconfig').intelephense.setup {
---	cmd = {'intelephense', '--stdio'},
---	filetypes = {'php'},
---	root_pattern = { 'composer.json', '.git' }
---}
-
-require('mason').setup({})
-require('mason-lspconfig').setup({
-  ensure_installed = {},
-  handlers = {
-    default_setup,
-  },
-})
-
-local cmp = require('cmp')
-
-cmp.setup({
-  sources = {
-    {name = 'nvim_lsp'},
-  },
-  mapping = cmp.mapping.preset.insert({
-    -- Enter key confirms completion item
-    ['<CR>'] = cmp.mapping.confirm({select = false}),
-
-    -- Ctrl + space triggers completion menu
-    ['<C-Space>'] = cmp.mapping.complete(),
-  }),
-  snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body)
-    end,
-  },
-})
