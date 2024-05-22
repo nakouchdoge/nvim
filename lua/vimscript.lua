@@ -1,4 +1,3 @@
-vim=vim
 vim.cmd("set number relativenumber")
 vim.cmd("set cursorline")
 vim.cmd("set guicursor=a:blinkon100")

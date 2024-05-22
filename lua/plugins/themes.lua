@@ -11,6 +11,7 @@ return {
         "folke/tokyonight.nvim",
         config = function()
             require("tokyonight").setup({
+				lazy = false,
                 -- your configuration comes here
                 -- or leave it empty to use the default settings
                 style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
