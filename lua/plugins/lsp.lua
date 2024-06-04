@@ -27,9 +27,8 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
-                "bashls",
-                "intelephense",
-				"cssls",
+				"docker_compose_lanuage_service",
+				"dockerls",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
