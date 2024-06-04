@@ -27,7 +27,7 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
-				"docker_compose_lanuage_service",
+				"docker_compose_language_service",
 				"dockerls",
             },
             handlers = {
